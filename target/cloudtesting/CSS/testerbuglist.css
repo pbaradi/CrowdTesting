@@ -1,0 +1,14 @@
+@CHARSET "ISO-8859-1";
+header {
+    background: #4d4577;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+
+body{
+	 background: #eee;
+}
+
+.panel-body{
+	background: #f9f9f9;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html data-ng-app="adminDashboardApp">
+<head>
+<!-- Bootstrap CSS -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- AngularJS script -->
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../JS/admindashboard.js"></script>
+<link rel="stylesheet" href="../CSS/admindashboard.css" />
+</head>
+
+
+<body data-ng-controller="adminDashboardController">
+	<header id="heading">
+		<nav>
+			<h2 align="center">
+				<i><b>Crowd Sourced Testing</b></i>
+			</h2>
+		</nav>
+	</header>
+	<nav class="navbar navbar-default">
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a><button type="button" class="btn btn-primary"
+							data-ng-click="logout()">Log Out</button> </a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container" style="padding-top:10px">
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div id="tabNames">
+				<ul class="nav nav-pills" id="tabs">
+
+					<li data-ng-class="{content-active:tab===1}" data-ng-init="tab=1"><a
+						href="" data-ng-click="tab=1">Home</a></li>
+					<li data-ng-class="{content-active:tab===2}"><a href=""
+						data-ng-click="tab=2">Applications</a></li>
+
+				</ul>
+			</div>
+			<br>
+			<br>
+			<div data-ng-show="tab==1" class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<h3 align="center" style="color: maroon">Admin Dashboard</h3>
+							</div>
+							<img src="../images/admindashboard.jpg" class="img-responsive"
+								alt="Responsive image">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div data-ng-show="tab==2">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="page-header">
+									<h3 align="center" style="color: maroon">Projects</h3>
+								</div>
+								<!--  <img align="left" src="../images/admindashboard.jpg" class="img-responsive" alt="Responsive image">-->
+								<table class="table table-striped">
+									<thead>
+										<tr>
+
+											<th>Project Name</th>
+											<th>Project Description</th>
+											<th>Start Date</th>
+											<th>Deadline</th>
+											<th>Category</th>
+											<th>Status</th>
+											<th>Click</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr align="left" data-ng-repeat="project in projects">
+											<td>{{project.projectName}}</td>
+											<td>{{project.projectDesc}}</td>
+											<td>{{project.projectCategory}}</td>
+											<td>{{project.testType}}</td>
+											<td>{{project.deadLine}}</td>
+											<td>Ongoing</td>
+											<td><a
+												href="http://localhost:8080/cloudtesting/HTML/ProjectBugList.html"><button
+														type="button" class="btn btn-primary">View Bugs</button> </a></td>
+
+										</tr>
+									</tbody>
+								</table>
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="page-header">
+									<h3 align="center" style="color: maroon">Testers</h3>
+								</div>
+								<!--  <img align="left" src="../images/admindashboard.jpg" class="img-responsive" alt="Responsive image">-->
+								<table class="table table-striped">
+									<thead>
+										<tr>
+
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th>Incentive</th>
+											<th></th>
+											<th></th>
+											<th>Status</th>
+											<th>Click</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr align="left" data-ng-repeat="tester in testers">
+											<td>{{tester.firstName}}</td>
+											<td>{{tester.lastName}}</td>
+											<td>{{tester.amount}}</td>
+											<td></td>
+											<td></td>
+											<td>Active</td>
+											<td><a
+												href="http://localhost:8080/cloudtesting/HTML/TesterBugList.html"><button
+														type="button" class="btn btn-primary">View Bugs</button> </a></td>
+										</tr>
+									</tbody>
+								</table>
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="page-header">
+									<h3 align="center" style="color: maroon">Clients</h3>
+								</div>
+								<!--  <img align="left" src="../images/admindashboard.jpg" class="img-responsive" alt="Responsive image">-->
+								<table class="table table-striped">
+									<thead>
+										<tr>
+
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th>Amount</th>
+
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr align="left" data-ng-repeat="client in clients">
+											<td>{{client.firstName}}</td>
+											<td>{{client.lastName}}</td>
+											<td>{{client.amount}}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

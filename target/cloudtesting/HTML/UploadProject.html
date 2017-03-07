@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html data-ng-app="uploadProjectApp">
+	<head>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../JS/uploadproject.js"></script>
+<link rel="stylesheet" href="../CSS/register.css">
+    </head>
+    <body data-ng-controller="uploadProjectAppCtrl">
+    	<header id="heading">
+		<nav>
+			<h2 align="center">
+				<i><b>Crowd Sourced Testing</b></i>
+			</h2>
+		</nav>
+	</header>
+	
+    <nav  class="navbar navbar-default">
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a><button type="button" class="btn btn-primary"
+									data-ng-click="dashboard()">Dashboard</button> </a></li>
+						<li><a><button type="button" class="btn btn-primary"
+									data-ng-click="logout()">Log Out</button> </a></li>
+					</ul>
+				</div>
+			</nav>
+   
+        <div class="page-header">
+            <h3 align="center" style="color:maroon">Upload Project</h3>
+        </div>
+       <!--   <div data-ng-controller="registerController">-->
+			 <div class="container" style="padding-top:10px">
+        	<div class="panel panel-default">
+        	        		<div class="panel-body">
+        <!-- <form> -->
+        <form name="upload1" class="form" >
+			<div class="row">
+        		<label class="col-md-4 control-label" for="pname"  ></label>
+                <div class="col-md-4 center-block" style="padding-top:10px" align="left">
+        				       <strong><label for="projectname" class="control-lable">Project Name:</label></strong>
+        				       <input type="text" name="ProjectName" data-ng-model="projectName" class="form-control" id="projectName" placeholder="Project Name" />
+        				    </div>
+ 
+        				    </div>
+			
+			<div class="row">
+        		<label class="col-md-4 control-label" for="ProjectDesc"  ></label>
+                <div class="col-md-4 center-block" style="padding-top:10px" align="left">
+        				       <strong><label for="projdesc" class="control-lable">Project Description:</label></strong>
+        				       <input type="text" data-ng-model="projDesc" class="form-control" id="projdesc" placeholder="Project Description" />
+        				    </div>
+        				    </div>
+        				    
+        				    	<div class="row">
+        		<label class="col-md-4 control-label" for="projcategory"  ></label>
+                <div class="col-md-4 center-block" style="padding-top:10px" align="left">
+        				       <strong><label for="projcategory" class="control-lable">Project Category:</label></strong>
+        				       <input type="text" data-ng-model="projcategory" class="form-control" id="projcategory" placeholder="Project Category" />
+        				    </div>
+        				    </div>
+        				    
+        				    <div class="row">
+        				    <label class="col-md-4 control-label" for="testtype"  ></label>
+                <div class="col-md-4 center-block" style="padding-top:10px" align="left">
+        				       <strong><label for="testtype" class="control-lable">Test Type:</label></strong>
+        				       <input type="text" data-ng-model="testType" class="form-control" id="testtype" placeholder="Test Type" />
+        				    </div>
+        				    </div>
+        				        <div class="row">
+        				    <label class="col-md-4 control-label" for="deadline"  ></label>
+                <div class="col-md-4 center-block" style="padding-top:10px" align="left">
+        				       <strong><label for="deadline" class="control-lable">Deadline:</label></strong>
+        				       <input type="text" data-ng-model="deadline" class="form-control" id="deadline" placeholder="Deadline" />
+        				    </div>
+        				    </div>
+  
+	 	
+ 			<div class="row">
+        				    <label class="col-md-4 control-label" for="uploadapp"  ></label>
+                <div class="col-md-4 center-block" style="padding-top:10px" align="left">
+        				       <strong><label for="uploadApp" class="control-lable">Upload App:</label></strong>
+        				        <input type = "file" file-model = "myFile" name="file" file-model = "myFile" class="form-control" id="fileId" placeholder="Upload App" /><br>
+         <button data-ng-click = "uploadFile()" class="btn btn-primary center-block">upload me</button></div></div>
+        				
+        		<div class="row">
+        				    <label class="col-md-4 control-label" for="amount"  ></label>
+                <div class="col-md-4 center-block" style="padding-top:10px" align="left">
+        				       <strong><label for="amount" class="control-lable">Amount: $25.00</label></strong>
+        				       
+        				    </div>
+        				    </div>
+			 </form> 
+</div>
+</div>
+     
+</div>
+    </body>
+</html>
+
+
+        			
+        		

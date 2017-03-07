@@ -1,0 +1,29 @@
+
+.navbar navbar-default {
+	background: #808080;
+	text-transform: uppercase;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+p {
+	font-family: "Times New Roman", Times, serif;
+	font-style: normal;
+	font-size: 20px;
+	text-align: justify;
+}
+
+img{
+	margin-left: 20%;
+}
+
+	header {
+    background: #4d4577;
+	color: white;
+	padding: 15px 15px 15px 15px;
+}
+body{
+	 background: #eee;
+}
+
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html data-ng-app="testerDashboardApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Comptible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tester Dashboard</title>
+<!-- Bootstrap CSS -->
+<!-- Latest compiled and minified CSS -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<!-- AngularJS script -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script src="../JS/register.js"></script>
+<link rel="stylesheet" href="../CSS/register.css">
+<script src="../JS/testerdashboard.js"></script>
+<link rel="stylesheet" href="../CSS/testerdashboard.css" />
+</head>
+<body data-ng-controller="testerDashboardController">
+
+	<header id="heading">
+		<nav>
+			<h2 align="center">
+				<i><b>Crowd Sourced Testing</b></i>
+			</h2>
+		</nav>
+	</header>
+
+	<nav class="navbar navbar-default">
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a><button type="button" class="btn btn-primary"
+							data-ng-click="submitBugs()">Submit Bugs</button> </a></li>
+				<!-- 	<li><a><button type="button" class="btn btn-primary"
+									data-ng-click="profile()">Profile</button> </a></li> -->
+				<li><a><button type="button" class="btn btn-primary"
+							data-ng-click="logout()">Log Out</button> </a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="page-header">
+		<h3 align="center" style="color: maroon">Tester Dashboard</h3>
+	</div>
+	<div class="container">
+		<h4 align="left">
+			<b>Projects</b>
+		</h4>
+		<br>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Project Name</th>
+							<th>Project Description</th>
+							<th>Test Type</th>
+							<th>Category</th>
+							<th>Deadline</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr align="left" data-ng-repeat="response in responses">
+							<td>{{response.projectName}}</td>
+							<td>{{response.projectDesc}}</td>
+							<td>{{response.projectCategory}}</td>
+							<td>{{response.testType}}</td>
+							<td>{{response.deadLine}}</td>
+							<td>
+								<button type="button" class="btn btn-primary"
+									data-ng-click="download(response.projectId)">Download</button>
+							</td>
+						</tr>
+					</tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,97 @@
+<html data-ng-app="clientDashboardApp">
+	<head>
+		<!-- Bootstrap CSS -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<!-- AngularJS script -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="../JS/clientdashboard.js"></script>
+	<link rel="stylesheet" href="../CSS/clientdashboard.css">
+    </head>
+    <body data-ng-controller="clientDashboardAppCtrl"><nav  class="navbar navbar-default">
+    
+    <header id="heading">
+		<nav>
+			<h2 align="center">
+				<i><b>Crowd Sourced Testing</b></i>
+			</h2>
+		</nav>
+	</header>
+				<div class="collapse navbar-collapse"
+					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a><button type="button" class="btn btn-primary"
+									data-ng-click="profile()">Upload Project</button> </a></li>
+						<li><a><button type="button" class="btn btn-primary"
+									data-ng-click="logout()">Log Out</button> </a></li>
+					</ul>
+				</div>
+			</nav>
+   
+        <div class="page-header">
+            <h3 align="center" style="color:maroon">Client Dashboard</h3>
+        </div>
+       <!--   <div data-ng-controller="registerController">-->
+			<div class="container">
+			
+	
+		<h4 align= "left"><b>Ongoing Projects</b></h4>
+			<br>
+		<div class="panel panel-default">
+					<div class="panel-body">	
+			<table class="table table-striped">
+  					<thead><tr>
+    				<th>Project Name</th>
+    				<th>Project Description</th>
+   					 <th>Test Type</th>
+   					 <th>Category</th>
+   					<th>Deadline</th>
+ 					 </tr></thead>
+ 					
+ 					<tr align="left" data-ng-repeat="project in userProjects">
+   					  <td>{{project.projectName}}</td>
+   					   <td>{{project.projectDesc}}</td>
+   					    <td>{{project.projectCategory}}</td>
+   					     <td>{{project.testType}}</td>
+   					      <td>{{project.deadLine}}</td>
+ 					</tr> 
+ 					
+ 					</tbody>
+  					</table>
+  					</div></div>
+  					<br><br>
+  					<h4 align= "left"><b>Completed Projects</b></h4>
+				<br>
+			<div class="panel panel-default">
+					<div class="panel-body">	
+			<table class="table table-striped" >
+  					<thead><tr>
+    
+    				<th>Project Name</th>
+    				<th>Bugs</th>
+ 					 </tr></thead>
+   					<tbody><tr>
+    				<td>Target</td>
+    				<td>30</td></tr>
+    				<tr><td>Website Testing for Crowd Sourced Testing</td>
+    				<td>5</td></tr>
+    				<tr><td>Amazon Website Testing</td>
+    				<td>10</td>
+ 					</tr>
+   					 
+ 			</tbody>
+  					</table>
+  					</div></div>
+					</div>
+			
+		    </body>
+</html>
+
+
+        			
+        		
